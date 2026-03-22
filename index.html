@@ -233,11 +233,25 @@
             color: var(--text) !important;
             line-height: 1.5;
             margin-bottom: 4px;
+            text-decoration: none;
+            display: block;
+            transition: color 0.2s ease;
+        }
+
+        a.pub-title:hover {
+            color: var(--accent) !important;
         }
 
         .pub-authors {
             font-size: 0.88rem;
             color: var(--text-secondary) !important;
+        }
+
+        .pub-venue {
+            font-size: 0.84rem;
+            color: var(--accent) !important;
+            font-style: italic;
+            margin-top: 2px;
         }
 
         /* Footer */
@@ -354,15 +368,17 @@
                 <div class="pub-item">
                     <span class="pub-marker">1.</span>
                     <div class="pub-detail">
-                        <p class="pub-title">SDGSA: A Lightweight Shallow Dual-Group Symmetric Attention Network for Micro-Expression Recognition</p>
+                        <a class="pub-title" href="https://link.springer.com/article/10.1007/s40747-024-01594-x" target="_blank">SDGSA: A Lightweight Shallow Dual-Group Symmetric Attention Network for Micro-Expression Recognition</a>
                         <p class="pub-authors"><strong>Zhengyang Yu</strong>, et al.</p>
+                        <p class="pub-venue">Complex & Intelligent Systems, 2024</p>
                     </div>
                 </div>
                 <div class="pub-item">
                     <span class="pub-marker">2.</span>
                     <div class="pub-detail">
-                        <p class="pub-title">DCE: Dynamic Channel and Spatial Redundancy Elimination for Micro-Expression Recognition</p>
+                        <a class="pub-title" href="https://www.sciencedirect.com/science/article/abs/pii/S0957417426005889" target="_blank">DCE: Dynamic Channel and Spatial Redundancy Elimination for Micro-Expression Recognition</a>
                         <p class="pub-authors"><strong>Zhengyang Yu</strong>, et al.</p>
+                        <p class="pub-venue">Expert Systems with Applications, 2026</p>
                     </div>
                 </div>
             </div>
