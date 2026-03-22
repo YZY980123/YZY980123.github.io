@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhengyang Yu - Academic Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAFAF8;
+            --text: #1a1a1a;
+            --text-secondary: #555;
+            --accent: #2D5F8A;
+            --accent-light: #E8F0F7;
+            --border: #E0DDD8;
+            --card-bg: #FFFFFF;
+            --tag-bg: #F0EDE8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 60px 0 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        h1 {
+            font-family: 'Source Serif 4', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.88rem;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 6px 14px;
+            background: var(--accent-light);
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .contact-links a:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* Sections */
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text);
+            letter-spacing: -0.01em;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 22px;
+            background: var(--accent);
+            border-radius: 2px;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+
+        p {
+            font-size: 0.98rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Research Interests */
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .tag {
+            background: var(--tag-bg);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text);
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .tag:hover {
+            background: var(--accent-light);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Education */
+        .edu-item {
+            display: flex;
+            gap: 20px;
+            padding: 16px 0;
+        }
+
+        .edu-year {
+            font-size: 0.88rem;
+            color: var(--accent);
+            font-weight: 600;
+            min-width: 100px;
+            padding-top: 2px;
+        }
+
+        .edu-detail h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .edu-detail p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Publications placeholder */
+        .pub-note {
+            background: var(--accent-light);
+            padding: 20px 24px;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            color: var(--accent);
+            border-left: 3px solid var(--accent);
+        }
+
+        /* Publications */
+        .pub-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .pub-item {
+            display: flex;
+            gap: 14px;
+            padding: 16px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .pub-item:hover {
+            border-color: var(--accent);
+            box-shadow: 0 2px 12px rgba(45,95,138,0.08);
+        }
+
+        .pub-marker {
+            font-family: 'Source Serif 4', serif;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1rem;
+            padding-top: 1px;
+        }
+
+        .pub-detail {
+            flex: 1;
+        }
+
+        .pub-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text) !important;
+            line-height: 1.5;
+            margin-bottom: 4px;
+            text-decoration: none;
+            display: block;
+            transition: color 0.2s ease;
+        }
+
+        a.pub-title:hover {
+            color: var(--accent) !important;
+        }
+
+        .pub-authors {
+            font-size: 0.88rem;
+            color: var(--text-secondary) !important;
+        }
+
+        .pub-venue {
+            font-size: 0.84rem;
+            color: var(--accent) !important;
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.82rem;
+            color: #aaa;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header {
+                padding: 40px 0 30px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .contact-links {
+                gap: 10px;
+            }
+            .edu-item {
+                flex-direction: column;
+                gap: 4px;
+            }
+        }
+
+        /* Subtle entrance animation */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header, section {
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        section:nth-child(2) { animation-delay: 0.1s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+        section:nth-child(4) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Zhengyang Yu</h1>
+                    <p class="subtitle">
+                        Ph.D. Student<br>
+                        School of Electronic Information Engineering<br>
+                        Changchun University of Science and Technology
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:2022200111@mails.cust.edu.cn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            Email
+                        </a>
+                        <a href="https://orcid.org/0009-0002-0314-4010" target="_blank">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-1.847-1.303-3.722-3.853-3.722h-2.466z"/></svg>
+                            ORCID
+                        </a>
+                        <a href="https://github.com/YZY980123" target="_blank">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <h2>About</h2>
+            <p>
+                I am a Ph.D. student at the School of Electronic Information Engineering, 
+                Changchun University of Science and Technology. 
+                I am currently a visiting Ph.D. student at the School of Computing and Information Systems (SCIS), 
+                Singapore Management University (SMU).
+                My research focuses on micro-expression recognition, computer vision, 
+                and affect recognition.
+            </p>
+        </section>
+
+        <section>
+            <h2>Research Interests</h2>
+            <div class="research-tags">
+                <span class="tag">Micro-expression Recognition</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">Affect Recognition</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="edu-item">
+                <span class="edu-year">2025 – 2026</span>
+                <div class="edu-detail">
+                    <h3>Visiting Ph.D. Student</h3>
+                    <p>School of Computing and Information Systems (SCIS), Singapore Management University (SMU)</p>
+                </div>
+            </div>
+            <div class="edu-item">
+                <span class="edu-year">2022 – Present</span>
+                <div class="edu-detail">
+                    <h3>Ph.D. Student in Electronic Information Engineering</h3>
+                    <p>Changchun University of Science and Technology</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Publications</h2>
+            <div class="pub-list">
+                <div class="pub-item">
+                    <span class="pub-marker">1.</span>
+                    <div class="pub-detail">
+                        <a class="pub-title" href="https://link.springer.com/article/10.1007/s40747-024-01594-x" target="_blank">SDGSA: A Lightweight Shallow Dual-Group Symmetric Attention Network for Micro-Expression Recognition</a>
+                        <p class="pub-authors"><strong>Zhengyang Yu</strong>, et al.</p>
+                        <p class="pub-venue">Complex & Intelligent Systems, 2024</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <span class="pub-marker">2.</span>
+                    <div class="pub-detail">
+                        <a class="pub-title" href="https://www.sciencedirect.com/science/article/abs/pii/S0957417426005889" target="_blank">DCE: Dynamic Channel and Spatial Redundancy Elimination for Micro-Expression Recognition</a>
+                        <p class="pub-authors"><strong>Zhengyang Yu</strong>, et al.</p>
+                        <p class="pub-venue">Expert Systems with Applications, 2026</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2026 Zhengyang Yu · Last updated: March 2026
+        </footer>
+    </div>
+</body>
+</html>
